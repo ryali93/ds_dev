@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>LIST REVIEWS</title>
+</head>
+<body>
+	<table border=1 width=30%>
+		<th>ID</th>
+		<th>REVIEW</th>
+		{% for r in reviews %}
+		<tr>
+			<td>{{r.id}}</td>
+			<td>{{r.review}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<p><a href="{% url 'index' %}">HOME</a></p>
+</body>
+</html>

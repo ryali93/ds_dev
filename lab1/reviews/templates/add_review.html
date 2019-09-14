@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en", dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>ADD REVIEW</title>
+</head>
+<body>
+	Agregar reseña
+	<form method="post">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">SUBMIT</button>
+	</form>
+
+</body>
+</html>
