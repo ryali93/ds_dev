@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>GitHub API</h2>
+    <form method="GET">
+      <input type="text" name="username">
+      <button type="submit">SEARCH GITHUB</button>
+    </form>
+    {% if user %}
+      <p><strong>{{ user.name }}</strong> has <strong>{{user.public_repos}}</strong> public repositories.</p>
+
+    {% endif %}
+
+
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>GitHub API</h2>
+    <form method="GET">
+      <input type="text" name="username">
+      <button type="submit">SEARCH GITHUB</button>
+    </form>
+
+    {% if search_result %}
+      {% if search_result.success %}
+        <p>
+          <strong>{{search_result.name|default_if_none:search_result.login}}</strong> has
+          <strong>{{search_result.public_repos }}</strong> public repositories.
+        </p>
+      {% else %}
+        <p>{{ search_result.message}}</p>
+      {% endif %}
+      <p>Rate limit: {{ search_result.rate.remaining}} / {{search_result.rate.limit}}</p>
+    {% endif %}
+
+  </body>
+</html>
